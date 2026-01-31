@@ -3,7 +3,7 @@ Tic Tac Toe Game
 Author: Federico Cirett Galan
 """
 #from game_logic import game
-from game_logic import two_players
+from game_logic import play_game
 from menu import display_menu
 
 def main()-> None:
@@ -12,10 +12,9 @@ def main()-> None:
     while True:
         choice = display_menu()
         if choice == 1:
-            print("One Player Game is not implemented yet.")
-            # Here you would call the one player game function when implemented
+            play_game(1) # play vs computer
         elif choice == 2:
-            two_players()
+            play_game(2) # two players
         elif choice == 3:
             print("Exiting the game. Goodbye!")
             break
