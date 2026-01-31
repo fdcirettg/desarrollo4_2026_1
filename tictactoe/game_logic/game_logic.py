@@ -4,6 +4,7 @@ Author: Federico Cirett Galán
 Here goes the game logic for Tictactoe
 """
 import board
+import random
 
 def check_winner(d:dict, combo_list:list)->bool:
     """
@@ -50,28 +51,28 @@ def game()->str:
     #else:
     #    print(f"It's a tie!")
 
-def two_players():
+def play_game(players=2)->None:
     """ Two players game loop
     """
-    playing = True
-    score = {'X':0, 'O':0, 'Ties':0}
-    while playing:
-        winner = game()
-        if len(winner) > 0:
-            print(f"Winner: Player {winner}")
-        else:
-            print("It's a tie!")
-            winner = 'Ties'
-        score[winner] += 1
-        replay = input("Do you want to play again? (y/n): ").strip().lower()
-        if replay != 'y':
-            playing = False
-        print(f"Score: X = {score['X']}, O = {score['O']}, Ties = {score['Ties']}")
+    if players ==1:
+        print("One player mode is not implemented yet.")
+        return
+    else:
+        playing = True
+        score = {'X':0, 'O':0, 'Ties':0}
+        while playing:
+            winner = game()
+            if len(winner) > 0:
+                print(f"Winner: Player {winner}")
+            else:
+                print("It's a tie!")
+                winner = 'Ties'
+            score[winner] += 1
+            replay = input("Do you want to play again? (y/n): ").strip().lower()
+            if replay != 'y':
+                playing = False
+            print(f"Score: X = {score['X']}, O = {score['O']}, Ties = {score['Ties']}")
 
 
 if __name__ == "__main__":
-    win = game()
-    if len(win) > 0:
-        print(f"Winner: Player {win}")
-    else:
-        print(f"It's a tie!")
+    play_game(2)

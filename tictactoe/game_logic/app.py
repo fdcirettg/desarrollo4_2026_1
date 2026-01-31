@@ -6,7 +6,7 @@ Author: Federico Cirett Galan
 from game_logic import two_players
 from menu import display_menu
 
-def main():
+def main()-> None:
     """ Main function to run the Tic Tac Toe game
     """
     while True:
@@ -21,6 +21,6 @@ def main():
             break
         else:
             print("Invalid choice. Please select a valid option.")
-        
+
 if __name__ == "__main__":
     main()

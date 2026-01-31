@@ -13,4 +13,3 @@ def display_menu()-> int:
 
 if __name__ == "__main__":
     display_menu()
-    
